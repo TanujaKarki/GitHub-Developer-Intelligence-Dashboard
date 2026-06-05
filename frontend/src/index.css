@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0D1117;
+    color: #E6EDF3;
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0D1117;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #30363D;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #58A6FF;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-github-card border border-github-border rounded-xl;
+  }
+
+  .btn-primary {
+    @apply bg-github-primary text-github-bg font-semibold px-6 py-2.5 rounded-lg
+           hover:bg-blue-400 active:scale-95 transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-github-primary focus:ring-offset-2 
+           focus:ring-offset-github-bg;
+  }
+
+  .btn-ghost {
+    @apply border border-github-border text-github-text font-medium px-4 py-2 rounded-lg
+           hover:border-github-primary hover:text-github-primary transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-github-primary focus:ring-offset-2 
+           focus:ring-offset-github-bg;
+  }
+
+  .input-field {
+    @apply bg-github-card border border-github-border text-github-text rounded-lg px-4 py-3
+           focus:outline-none focus:border-github-primary focus:ring-1 focus:ring-github-primary
+           transition-all duration-200 placeholder-github-muted;
+  }
+
+  .badge {
+    @apply px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .stat-card {
+    @apply card p-5 flex flex-col gap-3 hover:border-github-primary/50 
+           transition-all duration-300 cursor-default;
+  }
+
+  .section-title {
+    @apply text-xl font-bold text-github-text mb-4 flex items-center gap-2;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #58A6FF 0%, #BC8CFF 50%, #3FB950 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.15), 0 0 40px rgba(88, 166, 255, 0.05);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(63, 185, 80, 0.15);
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, #161B22 25%, #1a2233 50%, #161B22 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  .glass {
+    background: rgba(22, 27, 34, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(48, 54, 61, 0.6);
+  }
+}
