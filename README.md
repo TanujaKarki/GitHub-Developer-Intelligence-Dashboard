@@ -137,7 +137,8 @@ PORT=5000
 **Frontend:**
 ```bash
 cp frontend/.env.example frontend/.env
-# Default: VITE_API_URL=http://localhost:5000
+# Default: VITE_API_URL=http://localhost:5001
+# Optional: VITE_PORT=5174
 ```
 
 ---
@@ -147,21 +148,21 @@ cp frontend/.env.example frontend/.env
 Start both servers in separate terminals:
 
 ```bash
-# Terminal 1 — Backend (port 5000)
+# Terminal 1 — Backend (port 5001)
 cd backend && npm run dev
 
-# Terminal 2 — Frontend (port 5173)
+# Terminal 2 — Frontend (port 5174)
 cd frontend && npm run dev
 ```
 
-Or use the root convenience script (requires `concurrently`):
+Or use the root convenience script (requires `concurrently` and `cross-env`):
 
 ```bash
-npm install           # installs concurrently
-npm run dev           # starts both simultaneously
+npm install           # installs concurrently and cross-env
+npm run dev           # starts both simultaneously on explicit ports
 ```
 
-Open [http://localhost:5173](http://localhost:5173)
+Open [http://localhost:5174](http://localhost:5174)
 
 ---
 
@@ -169,14 +170,14 @@ Open [http://localhost:5173](http://localhost:5173)
 
 ### Health Check
 ```
-GET http://localhost:5000/api/health
+GET http://localhost:5001/api/health
 → { "status": "ok", "timestamp": "..." }
 ```
 
 ### Search GitHub User
 ```
-GET http://localhost:5000/api/github/:username
-GET http://localhost:5000/api/github/:username?page=2&per_page=30
+GET http://localhost:5001/api/github/:username
+GET http://localhost:5001/api/github/:username?page=2&per_page=30
 ```
 
 **Response shape:**
@@ -214,6 +215,7 @@ GET http://localhost:5000/api/github/:username?page=2&per_page=30
 | Variable | Required | Description |
 |---|---|---|
 | `VITE_API_URL` | Yes | Backend base URL |
+| `VITE_PORT` | No | Frontend dev server port (default: 5174) |
 
 ---
 

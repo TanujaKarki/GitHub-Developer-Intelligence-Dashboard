@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
-  PORT: process.env.PORT || 5000,
+  PORT: process.env.PORT || 5001,
   GITHUB_TOKEN: process.env.GITHUB_TOKEN || '',
   GITHUB_API_BASE: 'https://api.github.com',
   CACHE_TTL: 60, // seconds

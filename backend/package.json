@@ -4,8 +4,8 @@
   "description": "Node.js/Express backend proxy for GitHub Developer Intelligence Dashboard",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node scripts/ensureEnv.js && node server.js",
+    "dev": "node scripts/ensureEnv.js && nodemon server.js",
     "test": "jest --coverage --forceExit",
     "test:watch": "jest --watch"
   },
