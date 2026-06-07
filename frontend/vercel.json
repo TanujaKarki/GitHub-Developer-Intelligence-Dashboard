@@ -1,10 +1,15 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "installCommand": "npm install",
   "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist",
-  "framework": "vite",
-  "installCommand": "npm install",
-  "devCommand": "npm run dev",
   "env": {
-    "VITE_API_URL": "https://your-render-backend-url.onrender.com"
+    "VITE_API_URL": "https://<your-backend-project>.vercel.app/api"
   }
 }
