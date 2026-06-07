@@ -267,13 +267,17 @@ Covers:
 
 Or use the included `render.yaml` with Render's Blueprint feature.
 
-### Frontend → Vercel
+### Frontend + Backend → Vercel
+
+This repo can deploy both the frontend and backend together on Vercel using `vercel.json`.
 
 1. Push to GitHub
-2. Import repo on [Vercel](https://vercel.com)
-3. Set root directory: `frontend`
-4. Add environment variable: `VITE_API_URL=https://your-render-url.onrender.com`
+2. Import the repo on [Vercel](https://vercel.com)
+3. Set the root directory to the repository root
+4. Add environment variable: `GITHUB_TOKEN`
 5. Deploy
+
+The frontend will use `/api` to call the backend on the same Vercel deployment.
 
 ---
 

@@ -31,8 +31,8 @@ app.use((req, res) => {
 // Global error handler (must be last)
 app.use(errorHandler);
 
-// Start server only if not in test environment
-if (process.env.NODE_ENV !== 'test') {
+// Start server only when run directly
+if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
     console.log(`📊 GitHub Dashboard API ready`);
